@@ -8,7 +8,9 @@
 <body>
 <div id="display">
     <h3 style="text-align: center"> PING PONG GAME </h3>
-    <canvas id="myCanvas" width="960" height="600" style="border: 1px black"></canvas>
+    <canvas id="myCanvas" width="960" height="600"></canvas>
+    <button id="pause" onclick="pause()">PAUSE</button>
+    <input disabled id="continue" onclick="continueGame()" type="button" value="CONTINUE">
     <button id="restart" onclick="restart()">RESTART</button>
 </div>
 

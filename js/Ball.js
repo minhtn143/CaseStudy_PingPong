@@ -11,21 +11,22 @@ class Ball {
         this.velocityY = this.speed;
         this.directionX = 1;
         this.directionY = 1;
-        this.color = "white";
+        this.color = "orange";
     }
 
+    //tạo bóng
     drawBall() {
-        ctx.fillStyle = "white";
+        ctx.fillStyle = this.color;
         ctx.beginPath();
         ctx.arc(this.xPosition, this.yPostion, this.size, 0, Math.PI * 2, false);
         ctx.closePath();
         ctx.fill();
     }
 
+    // vecto di chuyển  của ball
     setDirectVelocityX() {
         this.directionX = -this.directionX;
     }
-
     setDirectVelocityY() {
         this.directionY = -this.directionY;
     }
@@ -34,12 +35,14 @@ class Ball {
         this.xPosition += this.velocityX * this.directionX;
         this.yPostion += this.velocityY * this.directionY;
     }
+    //kiểm tra chạm 2 cạnh trên dứoi
     isCollisionWall() {
         let isCollisionWall = false;
         if (ball.ballTop() < 0 || ball.ballBottom() > TABLE_HEIGHT)
             isCollisionWall = true;
         return isCollisionWall;
     }
+    //vị trí của bóng
     ballTop() {
         return this.yPostion - this.size;
     }
@@ -73,7 +76,7 @@ class Ball {
         }
         return true;
     }
-
+    //đổi góc bật lại
     changeAngle(player){
         let collidePoint = (this.yPostion - (player.yPosition + player.height / 2));
         collidePoint = collidePoint / (player.height / 2);
@@ -81,6 +84,7 @@ class Ball {
         this.setDirectVelocityX();
         this.velocityY = this.speed * Math.sin(angleRadian);
     }
+
     changeSpeed() {
         this.speed = Math.random() * 11 + BALL_SPEED;
     }

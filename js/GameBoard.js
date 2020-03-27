@@ -6,18 +6,18 @@ const TABLE_Y_POSITION = 0;
 const TABLE_COLOR = "blue";
 
 //thông số cài đặt Net
-const NET_WIDTH = 5;
-const NET_HEIGHT = 9;
+const NET_WIDTH = 4;
+const NET_HEIGHT = 10;
 const NET_COLOR = "white";
 
 //thông số bảng điểm Point
 const POINT_X_POSITION = 100;
 const POINT_Y_POSITION = 80;
 
-let isGameOver = true;
-const WIN_POINT = 3;
+//thông số game
+let isGameOver = false;
+const WIN_POINT = 5;
 const AI_LEVEL = Math.random()/15; //Higher is more slower
-
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 

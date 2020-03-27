@@ -13,21 +13,26 @@ class Player {
         this.height = height;
         this.color = color;
         this.point = 0;
-
     }
+
     drawPlayer(table){
         table.drawRectangle(this.xPosition,this.yPosition, this.width, this.height,this.color);
     }
+
+    //di chuyển lên xuống
     moveUp() {
         this.yPosition -= PLAYER_SPEED;
     }
     moveDown() {
             this.yPosition += PLAYER_SPEED;
-
     }
+
+    //cộng điểm
     hitPoint (){
         this.point++;
     }
+
+    //vị trí của player
     playerTop(){
         return this.yPosition;
     }
